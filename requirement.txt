@@ -7,3 +7,4 @@ langdetect
 transformers
 sounddevice 
 numpy
+datasets
