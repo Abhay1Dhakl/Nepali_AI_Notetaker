@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nepali_notetaker_package"
+version = "0.1.0"
+description = "Nepali ASR using Whisper fine-tuned model"
+authors = [{name="Your Name", email="you@example.com"}]
+dependencies = [
+    "torch",
+    "transformers",
+    "torchaudio"
+]
+
+
+
+[tool.setuptools]
+packages = ["asr_model"]
+
+[project.scripts]
+nepali_notetaker_package = "nepali_notetaker_package.model:transcribe"
