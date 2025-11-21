@@ -1,0 +1,29 @@
+## Training Dependencies for Whisper Fine-Tuning
+
+# Core ML frameworks with Mac M4 Pro (MPS) support
+torch>=2.0.0
+torchaudio>=2.0.0
+transformers>=4.30.0
+accelerate>=0.21.0
+
+# Data handling
+datasets>=2.14.0
+pandas>=1.5.0
+soundfile>=0.12.0
+librosa>=0.10.0
+
+# Evaluation metrics
+evaluate>=0.4.0
+jiwer>=3.0.0
+
+# Training utilities
+tensorboard>=2.13.0
+tqdm>=4.65.0
+
+# Existing dependencies (from requirement.txt)
+pytesseract
+opencv-python
+moviepy
+langdetect
+sounddevice
+numpy
