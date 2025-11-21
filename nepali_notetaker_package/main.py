@@ -26,9 +26,9 @@ def main():
         dataset_dir = Path(__file__).parent / "DataSet"
         audio_files = list(dataset_dir.rglob("*.wav")) + list(dataset_dir.rglob("*.flac"))
         
-        audio_path= audio_files[0]
-        print(f"No audio path provided, using sample: {audio_path}")
-        
+        if audio_files:
+            audio_path = audio_files[0]
+            print(f"No audio path provided, using sample: {audio_path}")
         else:
             print("Error: No audio file found. Please provide --audio_path argument")
             return

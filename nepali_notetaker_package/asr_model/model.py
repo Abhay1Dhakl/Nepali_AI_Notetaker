@@ -4,9 +4,11 @@ import torchaudio
 from .config import MODEL_PATH
 
 class NepaliASR:
-    def __init__(self):
-        self.processor = WhisperProcessor.from_pretrained(MODEL_PATH)
-        self.model = WhisperForConditionalGeneration.from_pretrained(MODEL_PATH)
+    def __init__(self, model_path=None):
+        # Use provided model path or default from config
+        load_path = model_path if model_path else MODEL_PATH
+        self.processor = WhisperProcessor.from_pretrained(load_path)
+        self.model = WhisperForConditionalGeneration.from_pretrained(load_path)
         # Disable forced decoder IDs that cause generate() to fail
         self.model.config.forced_decoder_ids = None
         self.model.generation_config.forced_decoder_ids = None
